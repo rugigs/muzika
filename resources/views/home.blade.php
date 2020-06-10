@@ -16,22 +16,22 @@
           <button type="button" name="button" class="btn btn-secondary">Share!</button>
         </form>
       </div>
-
-      <div class="card">
-        <div class="card-body">
-          <div class="row h-100">
-            <img src="https://i.pravatar.cc/40" alt="Profile Picture" class="rounded-circle pr-2">
-            <p class="my-auto font-weight-bold">Name</p>
-          </div>
-          <div class="row pt-3">
-            <p class="px-2">Dziesma</p>
-          </div>
-          <div class="row px-4 py-2">
-            <p>Teksts</p>
+      @foreach($posts as $post)
+        <div class="card">
+          <div class="card-body">
+            <div class="row h-100">
+              <img src="https://i.pravatar.cc/40?u={{$post->user->email}}" alt="Profile Picture" class="rounded-circle pr-2">
+              <p class="my-auto font-weight-bold">{{$post->user->name}}</p>
+            </div>
+            <div class="row pt-3">
+              <p class="px-2">Dziesma</p>
+            </div>
+            <div class="row px-4 py-2">
+              <p>{{$post->body}}</p>
+            </div>
           </div>
         </div>
-      </div>
-
+      @endforeach
     </div>
     <div class="col">
       @include('_recent-follows')
