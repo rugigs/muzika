@@ -22,6 +22,11 @@ Auth::routes();
 Route::get('/home', 'HomeController@index')->name('home');
 
 
+Route::get('/posts','PostController@index')->name('posts');
+Route::get('/post/{post_id}','PostController@show');
+Route::post('/post/update/{post_id}','PostController@update');
+Route::post('/post/delete/{post_id}','PostController@delete');
+
 
 
 Route::post('/music','MusicController@store');

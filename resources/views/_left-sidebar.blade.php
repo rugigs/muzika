@@ -1,6 +1,6 @@
 <ul class="list-group list-group-flush">
   <li class="list-group-item">
-    <a href="#">My Posts</a>
+    <a href="/posts">My Posts</a>
   </li>
   <li class="list-group-item">
     <a href="#">Artists</a>
