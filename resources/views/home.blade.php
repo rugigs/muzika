@@ -7,15 +7,8 @@
       @include('_left-sidebar')
     </div>
     <div class="col-6">
-      <div class="border rounded text-center">
-        <form class="" action="index.html" method="post">
-          <input type="text" name="" placeholder="Search for a song to share!" class="w-100 border rounded">
-          <hr>
-          <textarea name="name" rows="4" placeholder="Describe the song!" class="w-100 border rounded"></textarea>
-          <hr>
-          <button type="button" name="button" class="btn btn-secondary">Share!</button>
-        </form>
-      </div>
+      @include('_publish-post')
+      @if($posts->isNotEmpty())
       @foreach($posts as $post)
         <div class="card">
           <div class="card-body">
@@ -24,7 +17,7 @@
               <p class="my-auto font-weight-bold">{{$post->user->name}}</p>
             </div>
             <div class="row pt-3">
-              <p class="px-2">Dziesma</p>
+              <p class="px-2">Song: {{$post->music->name}}</p>
             </div>
             <div class="row px-4 py-2">
               <p>{{$post->body}}</p>
@@ -32,6 +25,9 @@
           </div>
         </div>
       @endforeach
+      @else
+        <p>No posts</p>
+      @endif
     </div>
     <div class="col">
       @include('_recent-follows')

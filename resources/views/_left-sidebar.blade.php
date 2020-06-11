@@ -6,6 +6,6 @@
     <a href="#">Artists</a>
   </li>
   <li class="list-group-item">
-    <a href="#">Songs</a>
+    <a href="/music">Music</a>
   </li>
 </ul>
