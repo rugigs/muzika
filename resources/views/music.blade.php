@@ -40,7 +40,7 @@
           <p class="my-auto">{{$song->listens}}</p>
         </div>
         <div class="col-2">
-          <a href="/post/{{$song->id}}" class="btn btn-secondary">Share!</a>
+          <a href="/music/{{$song->id}}" class="btn btn-secondary">Share!</a>
         </div>
       </div>
     </div>

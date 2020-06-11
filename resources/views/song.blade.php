@@ -10,7 +10,7 @@
     @endforeach
     <hr>
 
-    <form  action="/post" method="post">
+    <form  action="/music" method="post">
       @csrf
       <input type="text" name="id" value="{{$song->id}}" class="d-none">
     <textarea

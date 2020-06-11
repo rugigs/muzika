@@ -17,24 +17,6 @@ class PostController extends Controller
       ]);
     }
 
-    public function store()
-    {
 
-
-      $attributes = request()->validate([
-        'body'=>'required',
-        'id'=>'required'
-      ]);
-
-
-      Post::create([
-        'user_id'=>auth()->id(),
-        'music_id'=>$attributes['id'],
-        'body'=>$attributes['body']
-      ]);
-
-      return redirect('home');
-
-    }
 
 }
