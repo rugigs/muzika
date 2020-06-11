@@ -39,5 +39,6 @@ class CreateMusicTable extends Migration
     public function down()
     {
         Schema::dropIfExists('music');
+        Schema::dropIfExists('artist_music');
     }
 }
