@@ -3,7 +3,7 @@
     <a href="/posts">My Posts</a>
   </li>
   <li class="list-group-item">
-    <a href="#">Artists</a>
+    <a href="/artists">Artists</a>
   </li>
   <li class="list-group-item">
     <a href="/music">Music</a>

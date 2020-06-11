@@ -27,7 +27,7 @@ Route::get('/post/{post_id}','PostController@show');
 Route::post('/post/update/{post_id}','PostController@update');
 Route::post('/post/delete/{post_id}','PostController@delete');
 
-
+Route::get('/artists','ArtistController@index')->name('artists');
 
 Route::post('/music','MusicController@store');
 Route::get('/music', 'MusicController@index')->name('music');

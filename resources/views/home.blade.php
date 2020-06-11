@@ -16,7 +16,12 @@
               <p class="my-auto font-weight-bold">{{$post->user->name}}</p>
             </div>
             <div class="row pt-3">
-              <p class="px-2">Song: {{$post->music->name}}</p>
+              <p class="px-2"><b>Song:</b> {{$post->music->name}}</p><br>
+              <p><b>Artists:</b>
+                @foreach($post->music->artists as $artist)
+                  {{$artist->name}}
+                @endforeach
+              </p>
             </div>
             <div class="row px-4 py-2">
               <p>{{$post->body}}</p>
