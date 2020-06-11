@@ -21,4 +21,10 @@ Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
 
+
+Route::post('/post','PostController@store');
+Route::get('/post/{song_id}','PostController@index')->name('post.song');
+
+
+
 Route::get('/music', 'MusicController@index')->name('music');
