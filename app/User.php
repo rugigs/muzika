@@ -51,4 +51,23 @@ class User extends Authenticatable
     {
       return Post::latest()->get();
     }
+
+    public function follows()
+    {
+      return $this->belongsToMany(Artist::class);
+    }
+
+    public function follow(Artist $artist)
+    {
+      return $this->follows()->save($artist);
+    }
+
+    public function unfollow(Artist $artist)
+    {
+      return $this->follows()->detach($artist);
+    }
+    public function following(Artist $artist)
+    {
+      return $this->follows->contains($artist);
+    }
 }

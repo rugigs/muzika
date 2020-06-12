@@ -28,6 +28,8 @@ Route::post('/post/update/{post_id}','PostController@update');
 Route::post('/post/delete/{post_id}','PostController@delete');
 
 Route::get('/artists','ArtistController@index')->name('artists');
+Route::post('/artist/follow/{artist_id}','ArtistController@store');
+Route::post('/artist/unfollow/{artist_id}','ArtistController@delete');
 
 Route::post('/music','MusicController@store');
 Route::get('/music', 'MusicController@index')->name('music');
