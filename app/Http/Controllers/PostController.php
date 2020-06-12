@@ -21,6 +21,9 @@ class PostController extends Controller
 
     public function show($id){
       $post = Post::find($id);
+      if($post->user_id != auth()->user()->id){
+        abort(404);
+      }
 
       return view('update-post',[
         'post'=>$post
@@ -29,11 +32,16 @@ class PostController extends Controller
 
     public function update($id){
 
+      $post = Post::find($id);
+      if($post->user_id != auth()->user()->id){
+        abort(404);
+      }
+
       $attributes = request()->validate([
         'body'=>'required'
       ]);
 
-      Post::find($id)->update([
+      $post->update([
         'body'=>$attributes['body']
       ]);
 
@@ -42,7 +50,12 @@ class PostController extends Controller
 
     public function delete($id){
 
-      Post::find($id)->delete();
+      $post = Post::find($id);
+      if($post->user_id != auth()->user()->id){
+        abort(404);
+      }
+
+      $post->delete();
 
       return redirect('posts');
 

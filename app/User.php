@@ -52,6 +52,9 @@ class User extends Authenticatable
       return Post::latest()->get();
     }
 
+
+
+
     public function follows()
     {
       return $this->belongsToMany(Artist::class);
@@ -66,6 +69,7 @@ class User extends Authenticatable
     {
       return $this->follows()->detach($artist);
     }
+
     public function following(Artist $artist)
     {
       return $this->follows->contains($artist);
